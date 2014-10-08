@@ -7,6 +7,7 @@ gem 'rails', '4.1.6'
 # template engine
 gem 'haml-rails'
 gem 'kaminari'
+gem 'erb2haml'
 
 # databse
 gem 'mysql2'
