@@ -1,0 +1,21 @@
+%h1 Listing issues
+
+%table
+  %tr
+    %th Url
+    %th Open
+    %th
+    %th
+    %th
+
+  - @issues.each do |issue|
+    %tr
+      %td= issue.url
+      %td= issue.open
+      %td= link_to 'Show', issue
+      %td= link_to 'Edit', edit_issue_path(issue)
+      %td= link_to 'Destroy', issue, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Issue', new_issue_path

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :issues
+
   resources :charts
 
   root to: "charts#index"
