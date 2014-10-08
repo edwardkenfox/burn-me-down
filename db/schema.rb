@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008130953) do
+ActiveRecord::Schema.define(version: 20141008134648) do
 
   create_table "charts", force: true do |t|
     t.string   "name"
@@ -22,5 +22,13 @@ ActiveRecord::Schema.define(version: 20141008130953) do
   end
 
   add_index "charts", ["name"], name: "index_charts_on_name", using: :btree
+
+  create_table "issues", force: true do |t|
+    t.string   "url"
+    t.integer  "open"
+    t.integer  "chart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
