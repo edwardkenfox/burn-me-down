@@ -2,11 +2,11 @@
 
 %p
   %b Url:
-  = @issue.url
+  = link_to @issue.url, @issue.url
 %p
   %b Open:
   = @issue.open
 
-= link_to 'Edit', edit_issue_path(@issue)
+= link_to 'Edit', edit_chart_issue_path(@issue.chart, @issue)
 \|
-= link_to 'Back', issues_path
+= link_to 'Back', chart_issues_path

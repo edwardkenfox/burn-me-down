@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @issue
+= link_to 'Show', chart_issue_path(@chart, @issue)
 \|
-= link_to 'Back', issues_path
+= link_to 'Back', chart_issues_path(@chart)

@@ -13,4 +13,6 @@
 class Chart < ActiveRecord::Base
   has_many :issues
   has_one :velocity
+
+  validates_presence_of :name
 end

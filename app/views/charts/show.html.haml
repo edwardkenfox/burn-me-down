@@ -6,6 +6,17 @@
 
 #chart_div{ style: "width: 900px; height: 500px;" }
 
+%h3
+  Issues
+
+- @chart.issues.each do |issue|
+  %ul
+    %li
+      = link_to issue.url, chart_issue_path(@chart, issue)
+      = issue.open
+
+= link_to 'Add issue to this chart', new_chart_issue_path(@chart)
+
 = link_to 'Edit', edit_chart_path(@chart)
 \|
 = link_to 'Back', charts_path

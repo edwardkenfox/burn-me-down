@@ -12,10 +12,14 @@
     %tr
       %td= issue.url
       %td= issue.open
-      %td= link_to 'Show', issue
-      %td= link_to 'Edit', edit_issue_path(issue)
-      %td= link_to 'Destroy', issue, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', chart_issue_path(@chart, issue)
+      %td= link_to 'Edit', edit_chart_issue_path(@chart, issue)
+      %td= link_to 'Destroy', chart_issue_path(@chart, issue), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Issue', new_issue_path
+= link_to 'New Issue', new_chart_issue_path
+
+%br
+
+= link_to 'Back to chart', chart_path(@chart)
