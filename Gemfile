@@ -45,6 +45,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 
   # debugger
+  gem 'pry', '< 0.10.0'
   gem 'pry-rails'
   gem 'hirb-unicode'
   gem 'byebug'
