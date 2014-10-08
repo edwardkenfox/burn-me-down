@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :charts
+
   get '/test.php.html' => 'root#test'
+
+  root to: "charts#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
