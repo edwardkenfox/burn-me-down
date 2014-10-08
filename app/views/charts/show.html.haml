@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @chart.name
+
+= link_to 'Edit', edit_chart_path(@chart)
+\|
+= link_to 'Back', charts_path

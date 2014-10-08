@@ -1,0 +1,19 @@
+%h1 Listing charts
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @charts.each do |chart|
+    %tr
+      %td= chart.name
+      %td= link_to 'Show', chart
+      %td= link_to 'Edit', edit_chart_path(chart)
+      %td= link_to 'Destroy', chart, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Chart', new_chart_path
