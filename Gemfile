@@ -9,7 +9,7 @@ gem 'haml-rails'
 gem 'kaminari'
 
 # databse
-gem 'sqlite3'
+gem 'mysql2'
 
 # css
 gem 'sass-rails', '~> 4.0.3'
