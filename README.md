@@ -15,7 +15,7 @@ $ git clone git@github.com:edwardkenfox/burn-me-down.git
 $ bundle install
 ```
 
-- create database 
+### create database 
 
 ```
 $ rake db:create
@@ -24,7 +24,7 @@ $ rake db:create
 ### start server
 
 ```
-$ bundle exec rails s
+$ rails s
 ```
 
 ### done!
