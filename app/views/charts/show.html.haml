@@ -36,15 +36,18 @@
     contentType: "application/json; charset=utf-8"
     url: "/get_data"
     dataType: "json"
+    data:
+      chart_id: "#{@chart.id}"
     success: (received_data) ->
+      console.log(received_data)
       chart = c3.generate(
         bindto: "#chart"
         data:
           columns: [
-            received_data,
-            ['Ideal', 98, 88, 78, 68, 58, 48, 38]
+            received_data[0],
+            received_data[1]
           ]
       )
 
     error: (result) ->
-      $("#chart").text "Chart load failed"
+      $("#chart").text "Create velocity!"
