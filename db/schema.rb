@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008134648) do
+ActiveRecord::Schema.define(version: 20141012085928) do
 
   create_table "charts", force: true do |t|
     t.string   "name"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20141008134648) do
     t.string   "url"
     t.integer  "open"
     t.integer  "chart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "velocities", force: true do |t|
+    t.integer  "chart_id"
+    t.integer  "start_count"
+    t.integer  "end_count"
+    t.date     "start_at"
+    t.date     "end_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
