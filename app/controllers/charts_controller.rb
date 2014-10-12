@@ -61,6 +61,14 @@ class ChartsController < ApplicationController
     end
   end
 
+  def get_data
+    respond_to do |format|
+      format.json do
+        render json: Issue.active.pluck(:id).unshift("Actual")
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chart

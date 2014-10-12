@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :issues
   end
 
+  get "/get_data", to: "charts#get_data", as: "get_data"
+
   root to: "charts#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -4,7 +4,7 @@
   %b Name:
   = @chart.name
 
-#chart_div{ style: "width: 900px; height: 500px;" }
+#chart{ style: "width: 700px; height: 400px;" }
 
 %h3
   Issues
@@ -23,3 +23,22 @@
 = link_to 'Edit', edit_chart_path(@chart)
 \|
 = link_to 'Back', charts_path
+
+:coffee
+  $.ajax
+    type: "GET"
+    contentType: "application/json; charset=utf-8"
+    url: "/get_data"
+    dataType: "json"
+    success: (received_data) ->
+      chart = c3.generate(
+        bindto: "#chart"
+        data:
+          columns: [
+            received_data,
+            ['Ideal', 98, 88, 78, 68, 58, 48, 38]
+          ]
+      )
+
+    error: (result) ->
+      $("#chart").text "Chart load failed"
