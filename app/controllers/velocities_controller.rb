@@ -1,11 +1,6 @@
 class VelocitiesController < ApplicationController
   before_action :set_velocity, only: [:show, :edit, :update, :destroy]
 
-  # GET /velocity/1
-  # GET /velocity/1.json
-  def show
-  end
-
   # GET /velocity/new
   def new
     @velocity = Velocity.new(chart_id: params[:id])
@@ -20,7 +15,6 @@ class VelocitiesController < ApplicationController
   def create
     @velocity = Velocity.new(velocity_params)
     @velocity.chart = Chart.find(params[:id])
-    binding.pry
 
     respond_to do |format|
       if @velocity.save
@@ -37,7 +31,7 @@ class VelocitiesController < ApplicationController
   # PATCH/PUT /velocity/1.json
   def update
     respond_to do |format|
-      if @chart.update(velocity_params)
+      if @velocity.update(velocity_params)
         format.html { redirect_to @velocity.chart, notice: 'Velocity was successfully updated.' }
         format.json { render :show, status: :ok, location: @velocity.chart }
       else

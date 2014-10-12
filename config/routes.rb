@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :charts do
     resources :issues
     member do
-      resource :velocity, only: [:show, :new, :create, :edit, :update]
+      resource :velocity, only: [:new, :create, :edit, :update]
     end
   end
 

@@ -1,5 +1,25 @@
 %h1 Edit Velocity
 
-= render 'form'
+= form_for @velocity, url: velocity_path, method: :patch do |f|
+  - if @velocity.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@velocity.errors.count, "error")} prohibited this chart from being saved:"
+      %ul
+        - @velocity.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :start_count
+    = f.text_field :start_count
+    = f.label :end_count
+    = f.text_field :end_count
+    %br
+    = f.label :start_at
+    = f.date_field :start_at
+    = f.label :end_at
+    = f.date_field :end_at
+  .actions
+    = f.submit 'Save'
+
 
 = link_to 'Back', chart_path(@velocity.chart)
