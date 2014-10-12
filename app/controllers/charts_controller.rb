@@ -65,21 +65,23 @@ class ChartsController < ApplicationController
     respond_to do |format|
       format.json do
         data = []
-        data[0] = data[1] = []
-
+        data[0] = data[1] = data[2] = []
 
         velocity = Velocity.find_by(chart_id: params[:chart_id])
         r = velocity.start_count - velocity.end_count
         cnt = (velocity.end_at - velocity.start_at).to_i
         v = r / cnt
         cnt.times do |i|
-          data[1] << r - i * v
+          data[2] << r - i * v
         end
+        data[2].unshift "Ideal"
 
-        data[0] = cnt.times.map{ |i| (i * rand(1.0..3.5)).to_i }
-        data[0].sort!.reverse!
-        data[0].unshift "Actual"
-        data[1].unshift "Ideal"
+        data[1] = cnt.times.map{ |i| (i * rand(1.0..3.0)).to_i }
+        data[1].sort!.reverse!
+        data[1].unshift "Actual"
+
+        data[0] = cnt.times.map{ |i| (velocity.end_at - (cnt - i)).to_date.to_s }
+        data[0].unshift "x"
 
         render json: data
       end
