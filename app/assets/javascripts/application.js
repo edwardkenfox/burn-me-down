@@ -15,3 +15,5 @@
 //= require_tree .
 //= require google_js_api
 //= require sample_chart
+//= require d3.min
+//= require c3

@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   resources :charts do
     resources :issues
+    member do
+      resource :velocity, only: [:new, :create, :edit, :update]
+    end
   end
+
+  get "/get_data", to: "charts#get_data", as: "get_data"
 
   root to: "charts#index"
 
