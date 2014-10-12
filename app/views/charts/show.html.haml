@@ -7,6 +7,12 @@
 #chart{ style: "width: 700px; height: 400px;" }
 
 %h3
+- if @chart.velocity.nil?
+  = link_to "Create Velocity", new_velocity_path
+- else
+  = link_to "Edit Velocity", edit_velocity_path(@chart)
+
+%h3
   Issues
 
 - @chart.issues.each do |issue|
