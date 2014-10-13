@@ -74,4 +74,9 @@ group :test do
   gem 'rspec-rails', '~> 3.0', group: [:development]
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end
