@@ -35,8 +35,6 @@ gem 'pundit'
 # document
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# application preloader
-gem 'spring',        group: :development
 
 # app server
 gem 'unicorn'
@@ -61,6 +59,13 @@ group :development, :test do
   gem 'byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # test
+  gem 'guard-rspec'
+
+  # application preloader
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
