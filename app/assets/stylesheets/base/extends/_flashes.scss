@@ -11,28 +11,28 @@
   }
 }
 
-%flash-base {
+.flash-base {
   font-weight: bold;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
 }
 
-%flash-alert {
-  @extend %flash-base;
+.flash-alert {
+  @extend .flash-base;
   @include flash($alert-color);
 }
 
-%flash-error {
-  @extend %flash-base;
+.flash-error {
+  @extend .flash-base;
   @include flash($error-color);
 }
 
-%flash-notice {
-  @extend %flash-base;
+.flash-notice {
+  @extend .flash-base;
   @include flash($notice-color);
 }
 
-%flash-success {
-  @extend %flash-base;
+.flash-success {
+  @extend .flash-base;
   @include flash($success-color);
 }
