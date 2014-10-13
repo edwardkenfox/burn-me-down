@@ -49,6 +49,9 @@ group :development do
 end
 
 group :development, :test do
+  # string generator
+  gem 'faker'
+
   # model generator
   gem 'factory_girl_rails'
 
