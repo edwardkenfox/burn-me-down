@@ -14,7 +14,9 @@
 
 FactoryGirl.define do
   factory :issue do
-    url "MyString"
-    open 1
+    association :chart
+
+    url   Faker::Internet.url
+    open  1
   end
 end

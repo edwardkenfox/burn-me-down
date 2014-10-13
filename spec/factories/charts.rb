@@ -15,6 +15,8 @@
 
 FactoryGirl.define do
   factory :chart do
-    name "MyString"
+    association :team
+
+    name Faker::Lorem.word + "chart"
   end
 end
