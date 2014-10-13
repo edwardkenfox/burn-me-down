@@ -25,4 +25,11 @@ class User < ActiveRecord::Base
 
   has_many :team_users
   has_many :teams, through: :team_users
+
+  def setup_team
+    transaction do
+      team = Team.create!(name: "#{self.email} Team")
+      TeamUser.create!(user: self, team: team)
+    end
+  end
 end
