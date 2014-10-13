@@ -11,7 +11,7 @@
 #  team_id     :integer          not null
 #
 
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe Chart, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"

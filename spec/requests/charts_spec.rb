@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe "Charts", :type => :request do
   describe "GET /charts" do
