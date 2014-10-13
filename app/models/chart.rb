@@ -8,6 +8,7 @@
 #  velocity_id :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  team_id     :integer          not null
 #
 
 class Chart < ActiveRecord::Base
