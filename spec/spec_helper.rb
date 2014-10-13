@@ -32,7 +32,6 @@ RSpec.configure do |config|
   Capybara.javascript_driver = :poltergeist
 
   config.include FactoryGirl::Syntax::Methods
-  config.include SpecTestHelper
   config.include Devise::TestHelpers, type: :controller
   config.include Warden::Test::Helpers
   Warden.test_mode!
