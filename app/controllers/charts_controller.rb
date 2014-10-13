@@ -72,7 +72,7 @@ class ChartsController < ApplicationController
         cnt = (velocity.end_at - velocity.start_at).to_i
         v = r / cnt
         cnt.times do |i|
-          data[2] << r - i * v
+          data[2] << velocity.start_count - i * v
         end
         data[2].unshift "Ideal"
 
