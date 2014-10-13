@@ -15,6 +15,9 @@ gem 'mysql2'
 # css
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-rails', '4.1.0.0'
+gem 'bourbon'
+gem 'bitters'
+gem 'neat'
 
 # javascipt
 gem 'uglifier', '>= 1.3.0'

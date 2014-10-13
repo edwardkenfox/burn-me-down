@@ -37,6 +37,13 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (0.10.1)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -119,6 +126,9 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     mysql2 (0.3.16)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -228,6 +238,8 @@ DEPENDENCIES
   annotate
   better_errors
   binding_of_caller
+  bitters
+  bourbon
   byebug
   capistrano-rails
   coffee-rails (~> 4.0.0)
@@ -242,6 +254,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2
+  neat
   pry (< 0.10.0)
   pry-rails
   rails (= 4.1.6)
