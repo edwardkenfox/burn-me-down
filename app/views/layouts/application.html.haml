@@ -6,7 +6,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = render 'layouts/header'
+    = render 'layouts/header' if user_signed_in?
     = render 'layouts/flash' if flash.present?
     = yield
     = render 'layouts/footer'
