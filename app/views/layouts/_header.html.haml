@@ -4,12 +4,13 @@
   %nav
     %ul
       %li
-        = link_to "Teams", teams_path
-      %li
-        = link_to current_user.email, edit_user_registration_path
-      %li
         - if user_signed_in?
           = link_to destroy_user_session_path, method: :delete do
             %i.fa.fa-sign-out
             Sign out
+      %li
+        = link_to "Teams", teams_path
+      %li
+        = link_to edit_user_registration_path do
+          = current_user.email
 
