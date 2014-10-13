@@ -1,0 +1,28 @@
+%h2
+  Teams
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @teams.each do |team|
+    %tr
+      %td
+        = link_to team.name, team
+      %td
+        = link_to 'Show', team
+      %td
+        = link_to edit_team_path(team) do
+          %i.fa.fa-pencil
+          Edit
+      %td
+        = link_to team, method: :delete, data: { confirm: 'Are you sure?' } do
+          %i.fa.fa-trash-o
+          Destroy
+
+%br
+
+= link_to 'New Team', new_team_path

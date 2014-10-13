@@ -7,6 +7,8 @@
           %li= msg
 
   .field
+    = f.label :team_id
+    = f.collection_select :team_id, current_user.teams, :id, :name, prompt: true
     = f.label :name
     = f.text_field :name
   .actions
