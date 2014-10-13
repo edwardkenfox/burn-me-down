@@ -4,7 +4,7 @@ class ChartsController < ApplicationController
   # GET /charts
   # GET /charts.json
   def index
-    @charts = Chart.all
+    @charts = policy_scope(Chart)
   end
 
   # GET /charts/1
@@ -15,6 +15,7 @@ class ChartsController < ApplicationController
   # GET /charts/new
   def new
     @chart = Chart.new
+    authorize @chart
   end
 
   # GET /charts/1/edit
@@ -92,6 +93,7 @@ class ChartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_chart
       @chart = Chart.find(params[:id])
+      authorize @chart
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

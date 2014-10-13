@@ -17,4 +17,8 @@ class Chart < ActiveRecord::Base
   has_one :velocity
 
   validates_presence_of :name
+
+  scope :readable_by, -> (user) do
+    where(team_id: user.teams.pluck(:id))
+  end
 end
