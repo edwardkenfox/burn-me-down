@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: issues
+#
+#  id         :integer          not null, primary key
+#  url        :string(255)
+#  open       :integer
+#  chart_id   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'rails_helper'
 
 RSpec.describe Issue, :type => :model do
