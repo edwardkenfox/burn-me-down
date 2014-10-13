@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   resources :charts do
     resources :issues
     member do
