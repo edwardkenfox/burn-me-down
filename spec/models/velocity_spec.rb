@@ -15,5 +15,11 @@
 require 'spec_helper'
 
 RSpec.describe Velocity, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:chart)}
+    it { is_expected.to validate_presence_of(:start_count)}
+    it { is_expected.to validate_presence_of(:end_count)}
+    it { is_expected.to validate_presence_of(:start_at)}
+    it { is_expected.to validate_presence_of(:end_at)}
+  end
 end

@@ -12,5 +12,8 @@
 require 'spec_helper'
 
 RSpec.describe TeamUser, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:team) }
+    it { is_expected.to validate_presence_of(:user) }
+  end
 end
