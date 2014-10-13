@@ -11,6 +11,7 @@
 #
 
 class Chart < ActiveRecord::Base
+  belongs_to :team
   has_many :issues
   has_one :velocity
 
