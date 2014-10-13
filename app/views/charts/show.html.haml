@@ -1,16 +1,19 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%h3
   = @chart.name
 
 #chart{ style: "width: 900px; height: 500px;" }
 
 %h3
 - if @chart.velocity.nil?
-  = link_to "Create Velocity", new_velocity_path
+  = link_to new_velocity_path do
+    %i.fa.fa-plus
+    Create Velocity
 - else
-  = link_to "Edit Velocity", edit_velocity_path(@chart)
+  = link_to edit_velocity_path(@chart) do
+    %i.fa.fa-pencil
+    Edit Velocity
 
 %h3
   Issues
@@ -21,12 +24,16 @@
       = link_to issue.url, chart_issue_path(@chart, issue)
       = issue.open
 
-= link_to 'Add issue to this chart', new_chart_issue_path(@chart)
+= link_to new_chart_issue_path(@chart) do
+  %i.fa.fa-plus
+  Add issue to this chart
 
 %br
 %br
 
-= link_to 'Edit', edit_chart_path(@chart)
+= link_to edit_chart_path(@chart) do
+  %i.fa.fa-pencil
+  Edit Chart
 \|
 = link_to 'Back', charts_path
 
