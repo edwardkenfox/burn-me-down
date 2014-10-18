@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/edwardkenfox/burn-me-down/badges/gpa.svg)](https://codeclimate.com/github/edwardkenfox/burn-me-down)
+
+[![Test Coverage](https://codeclimate.com/github/edwardkenfox/burn-me-down/badges/coverage.svg)](https://codeclimate.com/github/edwardkenfox/burn-me-down)
+
 # README
 
 ## Getting Started
