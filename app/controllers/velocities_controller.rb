@@ -44,7 +44,8 @@ class VelocitiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_velocity
-      @chart = Chart.find(params[:id])
+      @chart = policy_scope(Chart).find(params[:id])
+      authorize @chart
       @velocity = @chart.velocity
     end
 
