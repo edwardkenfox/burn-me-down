@@ -16,5 +16,11 @@
 
 FactoryGirl.define do
   factory :velocity do
+    association :chart
+
+    start_count { rand(50) }
+    end_count   { rand(50) }
+    start_at    { Date.yesterday }
+    end_at      { Date.tomorrow }
   end
 end

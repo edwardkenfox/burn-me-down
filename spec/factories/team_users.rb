@@ -13,7 +13,7 @@
 
 FactoryGirl.define do
   factory :team_user do
-    references ""
-    references ""
+    association :user
+    association :team
   end
 end

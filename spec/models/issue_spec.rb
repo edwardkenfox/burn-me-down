@@ -10,8 +10,21 @@
 #  updated_at :datetime
 #
 
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe Issue, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:issue) { create(:issue) }
+  let(:closed_issue) { create(:issue, open: 2) }
+
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:url) }
+    it { is_expected.to validate_presence_of(:open) }
+  end
+
+  describe "scope :active" do
+    subject { Issue.active }
+
+    it { is_expected.to include issue }
+    it { is_expected.not_to include closed_issue }
+  end
 end

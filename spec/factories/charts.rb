@@ -4,7 +4,6 @@
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
-#  issue_id    :integer
 #  velocity_id :integer
 #  created_at  :datetime
 #  updated_at  :datetime
@@ -15,6 +14,8 @@
 
 FactoryGirl.define do
   factory :chart do
-    name "MyString"
+    association :team
+
+    name Faker::Lorem.word + "chart"
   end
 end

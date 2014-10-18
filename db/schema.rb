@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013045227) do
+ActiveRecord::Schema.define(version: 20141013101821) do
 
   create_table "charts", force: true do |t|
     t.string   "name"
-    t.integer  "issue_id"
     t.integer  "velocity_id"
     t.datetime "created_at"
     t.datetime "updated_at"

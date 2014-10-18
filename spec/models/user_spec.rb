@@ -17,8 +17,22 @@
 #  updated_at             :datetime
 #
 
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe User, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { create(:user) }
+
+  describe "#setup_team" do
+    it "creates Team" do
+      expect{
+        user.setup_team
+      }.to change(Team, :count).by 1
+    end
+
+    it "creates TeamUser with user" do
+      expect{
+        user.setup_team
+      }.to change(TeamUser.where(user: user), :count).by 1
+    end
+  end
 end

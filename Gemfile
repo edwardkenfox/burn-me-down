@@ -35,8 +35,6 @@ gem 'pundit'
 # document
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# application preloader
-gem 'spring',        group: :development
 
 # app server
 gem 'unicorn'
@@ -51,6 +49,9 @@ group :development do
 end
 
 group :development, :test do
+  # string generator
+  gem 'faker'
+
   # model generator
   gem 'factory_girl_rails'
 
@@ -61,6 +62,13 @@ group :development, :test do
   gem 'byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # test
+  gem 'guard-rspec'
+
+  # application preloader
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
@@ -69,4 +77,9 @@ group :test do
   gem 'rspec-rails', '~> 3.0', group: [:development]
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end
