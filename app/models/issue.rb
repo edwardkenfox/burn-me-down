@@ -15,5 +15,6 @@ class Issue < ActiveRecord::Base
 
   validates_presence_of [:url, :open]
 
+  # TODO: create module to manage issue open status
   scope :active, -> { where(open: 1) }
 end

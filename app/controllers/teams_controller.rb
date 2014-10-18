@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = current_user.teams
+    @teams = policy_scope(Team)
   end
 
   # GET /teams/1
@@ -65,7 +65,8 @@ class TeamsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_team
-    @team = Team.find(params[:id])
+    @team = policy_scope(Team).find(params[:id])
+    authorize @team
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

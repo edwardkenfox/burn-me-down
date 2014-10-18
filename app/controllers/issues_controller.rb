@@ -5,7 +5,7 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
-    @issues = @chart.issues
+    @issues = @chart.issues.active
   end
 
   # GET /issues/1
@@ -66,11 +66,13 @@ class IssuesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
-      @issue = Issue.find(params[:id])
+      @issue = policy_scope(Issue).find(params[:id])
+      authorize @issue
     end
 
     def set_chart
-      @chart = Chart.find(params[:chart_id])
+      @chart = policy_scope(Chart).find(params[:chart_id])
+      authorize @chart
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
