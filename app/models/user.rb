@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
 
   has_many :team_users
   has_many :teams, through: :team_users
+  has_many :charts, through: :teams
+  has_many :issues, through: :teams
 
   def setup_team
     transaction do
